@@ -3,6 +3,7 @@ package tests.pages;
 import static org.fluentlenium.core.filter.FilterConstructor.withId;
 import org.fluentlenium.core.FluentPage;
 import org.openqa.selenium.WebDriver;
+import static org.fest.assertions.Assertions.assertThat;
 
 /**
  * Implements the page object pattern for the index page of this application. 
@@ -30,9 +31,7 @@ public class IndexPage extends FluentPage {
 
   @Override
   public void isAt() {
-    if (!title().equals("play-example-form")) {
-      throw new RuntimeException("Not at IndexPage.");
-    }
+    assertThat(title()).isEqualTo("play-example-form");
   }
   
   public void setName(String name) {
