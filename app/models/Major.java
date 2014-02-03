@@ -75,7 +75,7 @@ public class Major {
   }
 
   /** Fake a database of majors. */
-  private static List<Major> allMajors = new ArrayList<>();
+  private static List<Major> allMajors = new ArrayList<Major>();
 
   /** Instantiate the fake database of Majors. */
   static {

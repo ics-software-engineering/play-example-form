@@ -17,10 +17,10 @@ public class Student {
   private long id;
   private String name;
   private String password;
-  private List<Hobby> hobbies = new ArrayList<>(); // Hobbies are optional.
+  private List<Hobby> hobbies = new ArrayList<Hobby>(); // Hobbies are optional.
   private GradeLevel level;
   private GradePointAverage gpa;
-  private List<Major> majors = new ArrayList<>(); // Majors are optional.
+  private List<Major> majors = new ArrayList<Major>(); // Majors are optional.
 
   /** Model entities typically want to have a no-arg constructor. */
   public Student() {
@@ -186,7 +186,7 @@ public class Student {
   
   
   /** Fake a database of students. */
-  private static List<Student> allStudents = new ArrayList<>();
+  private static List<Student> allStudents = new ArrayList<Student>();
 
   /** Populate the fake database with both valid and invalid students, just for tutorial purposes.*/
   static {
