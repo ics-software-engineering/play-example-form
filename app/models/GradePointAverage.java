@@ -64,7 +64,7 @@ public class GradePointAverage {
 
   /**
    * Return the GPA instance in the database with name 'gpa' or null if not found.
-   * @param gpa The gpa
+   * @param gpaName The gpa
    * @return The GradePointAverage instance, or null.
    */
   public static GradePointAverage findGPA(String gpaName) {
@@ -90,7 +90,7 @@ public class GradePointAverage {
   }
 
   /** Fake a database of GPAs. */
-  private static List<GradePointAverage> allGPAs = new ArrayList<>();
+  private static List<GradePointAverage> allGPAs = new ArrayList<GradePointAverage>();
 
   /** Instantiate the fake database of GPAs. */
   static {

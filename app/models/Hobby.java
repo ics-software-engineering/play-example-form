@@ -75,7 +75,7 @@ public class Hobby {
   }
 
   /** Fake a database of hobbies. */
-  private static List<Hobby> allHobbies = new ArrayList<>();
+  private static List<Hobby> allHobbies = new ArrayList<Hobby>();
 
   /** Instantiate the fake database of hobbies. */
   static {

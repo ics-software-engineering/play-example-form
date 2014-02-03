@@ -80,7 +80,7 @@ public class GradeLevel {
   }
 
   /** Fake a database of Grade Levels. */
-  private static List<GradeLevel> allLevels = new ArrayList<>();
+  private static List<GradeLevel> allLevels = new ArrayList<GradeLevel>();
 
   /** Instantiate the fake database. */
   static {

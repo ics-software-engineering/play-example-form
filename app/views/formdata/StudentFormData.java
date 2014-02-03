@@ -23,10 +23,10 @@ public class StudentFormData {
 
   public String name = "";
   public String password = "";
-  public List<String> hobbies = new ArrayList<>(); 
+  public List<String> hobbies = new ArrayList<String>(); 
   public String level = "";
   public String gpa = "";
-  public List<String> majors = new ArrayList<>(); 
+  public List<String> majors = new ArrayList<String>(); 
 
   /** Required for form instantiation. */
   public StudentFormData() {
@@ -72,7 +72,7 @@ public class StudentFormData {
    */
   public List<ValidationError> validate() {
 
-    List<ValidationError> errors = new ArrayList<>();
+    List<ValidationError> errors = new ArrayList<ValidationError>();
 
     if (name == null || name.length() == 0) {
       errors.add(new ValidationError("name", "No name was given."));
