@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="play-example-form : Example form including multiple checkboxes and selection" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="play-example-form : Example form including multiple checkboxes and selection">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -32,23 +32,22 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h1>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
 
 <p><img src="https://raw.github.com/ics-software-engineering/play-example-form/master/doc/play-example-form-homepage.png" alt="screenshot"></p>
 
 <p>This application provides an example of form processing with the following features:</p>
 
 <ul>
-<li>Play Version 2.2</li>
-<li>
-<a href="http://www.webjars.org/">WebJars</a> to download dependencies.</li>
-<li>
-<a href="http://getbootstrap.com/">Twitter Bootstrap 3.0.0</a>.</li>
-<li>Individual Twitter Bootstrap <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/bootstrap">helper templates</a> for each form control.</li>
-<li>Separation of <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/formdata">form backing classes</a> from <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/models">model classes</a>.</li>
-<li>Validation done with <a href="https://github.com/ics-software-engineering/play-example-form/blob/master/app/views/formdata/StudentFormData.java#L57-123">validate()</a>, not annotations.</li>
-<li>Testing with <a href="https://github.com/FluentLenium/FluentLenium">Fluentlenium</a>.</li>
-</ul><p>The design of this example differs in two significant ways from the traditional Play form processing examples. </p>
+<li><p><a href="https://www.playframework.com/">Play Version 2.3.7</a></p></li>
+<li><p><a href="http://getbootstrap.com/">Twitter Bootstrap 3.3.2</a>.</p></li>
+<li><p>Individual Twitter Bootstrap <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/bootstrap3">helper templates</a> for each form control.</p></li>
+<li><p>Separation of <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/formdata">form backing classes</a> from <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/models">model classes</a>.</p></li>
+<li><p>Validation done with <a href="https://github.com/ics-software-engineering/play-example-form/blob/master/app/views/formdata/StudentFormData.java#L57-123">validate()</a>, not annotations.</p></li>
+<li><p>Testing with <a href="https://github.com/FluentLenium/FluentLenium">Fluentlenium</a>.</p></li>
+</ul>
+
+<p>The design of this example differs in two significant ways from the traditional Play form processing examples. </p>
 
 <ol>
 <li><p><strong>Distinct model and form classes.</strong>  Most examples of form processing in Play "overload" the 
@@ -59,15 +58,17 @@
  classes for form processing, and the <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/models">models package</a> provides
  classes for database schemas. Since Play requires the backing classes for forms to have public fields,
  this separation means that model classes can have private fields, avoiding <a href="http://www.manning-sandbox.com/thread.jspa?messageID=143570&amp;#143570">well documented problems</a>. </p></li>
-<li><p><strong>Explicit field constructors for Twitter Bootstrap 3.x.</strong>  The canonical recommendation by Play developers for users of 
+<li><p><strong>Explicit field constructors for Twitter Bootstrap 3</strong>  The canonical recommendation by Play developers for users of
  Twitter Bootstrap is to create a single "implicit" field constructor.  The problem with this recommendation
  is that a single implicit field constructor cannot satisfy all of Twitter Bootstrap's layout
  requirements for form controls (for example, multiple checkboxes). This example illustrates
  a more general solution in which normal (i.e. "explicit") scala templates (i.e. field constructors) are defined in the 
  <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/bootstrap3">views.bootstrap3 package</a> for each of the Twitter Bootstrap controls. IMHO, the 
  code is significantly easier to understand and debug for Java-based Play framework users.  </p></li>
-</ol><h2>
-<a name="steps-to-understanding-the-system" class="anchor" href="#steps-to-understanding-the-system"><span class="octicon octicon-link"></span></a>Steps to understanding the system</h2>
+</ol>
+
+<h2>
+<a id="steps-to-understanding-the-system" class="anchor" href="#steps-to-understanding-the-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps to understanding the system</h2>
 
 <p><strong>Run the application.</strong></p>
 
@@ -127,7 +128,9 @@ to support display of their values as strings along with the student's current v
 those components.</p></li>
 <li><p>The <a href="https://github.com/ics-software-engineering/play-example-form/blob/master/app/models/Student.java#L165-185">Student.makeInstance</a> and <a href="https://github.com/ics-software-engineering/play-example-form/blob/master/app/models/Student.java#L150-162">Student.makeStudentFormData</a>
 methods provide conversion between the form data and model representations of a Student.</p></li>
-</ul><p><strong>Review the models.</strong></p>
+</ul>
+
+<p><strong>Review the models.</strong></p>
 
 <p>Skim through the <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/models">models package</a>. 
 There should be no surprises; it parallels the form pretty closely.  Some things to note:</p>
@@ -135,7 +138,9 @@ There should be no surprises; it parallels the form pretty closely.  Some things
 <ul>
 <li><p>A Student entity contains non-primitive, complex components such as a list of Hobby entities and a list of Major entities.</p></li>
 <li><p>The models have private fields and getters/setters. (Sorry, I'm old school that way.)     </p></li>
-</ul><p><strong>Review the views.</strong></p>
+</ul>
+
+<p><strong>Review the views.</strong></p>
 
 <p>The <a href="https://github.com/ics-software-engineering/play-example-form/tree/master/app/views">views package</a> 
 is where things get most interesting.   The <a href="https://github.com/ics-software-engineering/play-example-form/blob/master/app/views/main.scala.html">main</a>
@@ -170,15 +175,8 @@ submitting an empty form generates a validation error, one that submits a form f
 from a valid Student ID, and a final one that fills out a valid form manually by using the 
 IndexPage methods. </p>
 
-<p>Getting tests to work exposes an unfortunate library versioning issue: <a href="http://htmlunit.sourceforge.net/">HTMLUnit</a> requires 
-a version of JQuery no later than 1.8.3, while recent versions of Twitter Bootstrap 
-have a Maven dependency of JQuery 1.9.0.  <a href="https://github.com/ics-software-engineering/play-example-form/blob/master/project/Build.scala#L17-19">Build.scala</a>
-illustrates how to load a newer version of Bootstrap with an older, HTMLUnit-compliant version of JQuery.
-Another solution is to use <a href="http://phantomjs.org/">PhantomJS</a> rather than HTMLUnit; then you can
-use current versions of JQuery. <a href="https://github.com/buster84/play-example-form">This fork</a> shows how to use PhantomJS.</p>
-
 <h2>
-<a name="issues" class="anchor" href="#issues"><span class="octicon octicon-link"></span></a>Issues</h2>
+<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues</h2>
 
 <p>While this code works and is pretty easy to understand, there are at least two design problems with it
 that I can see:</p>
@@ -196,10 +194,12 @@ constraints could avoid it.  Annotation-based constraints also offer the potenti
 to simultaneously apply to both the database model and the form validation, which would be really
 nice.  As a first step, I played around for a while with <a href="http://www.playframework.com/documentation/2.0/JavaForms">Custom Data Binding</a>,
 but could not get it to work correctly for lists of Hobbies.</p></li>
-</ul><p>If you see ways to solve these problems, please feel free to fork this code and implement your changes. </p>
+</ul>
+
+<p>If you see ways to solve these problems, please feel free to fork this code and implement your changes. </p>
 
 <h2>
-<a name="screencast" class="anchor" href="#screencast"><span class="octicon octicon-link"></span></a>Screencast</h2>
+<a id="screencast" class="anchor" href="#screencast" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screencast</h2>
 
 <p>Click the image below to watch a 28 minute walkthrough of this system. </p>
 
@@ -209,7 +209,7 @@ have been rewritten, the rest of the system remains unchanged.</em></p>
 <p><a href="http://www.youtube.com/watch?v=247H9NVpMME"><img src="https://raw.github.com/ics-software-engineering/play-example-form/master/doc/play-example-form-screencast.png" width="400"></a></p>
 
 <h2>
-<a name="acknowledgements" class="anchor" href="#acknowledgements"><span class="octicon octicon-link"></span></a>Acknowledgements</h2>
+<a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acknowledgements</h2>
 
 <p>This example is a descendent of the original <a href="https://github.com/philipmjohnson/play-form-kludge/tree/original">play-form-kludge</a>
 and <a href="https://github.com/kaeawc">Jason Pearson</a>'s <a href="https://github.com/philipmjohnson/play-form-kludge">very helpful improvements</a>.</p>
