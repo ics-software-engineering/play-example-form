@@ -41,7 +41,7 @@ Steps to understanding the system
 
 **Run the application.**
 
-Begin by downloading the code, invoking "play run" in your shell, then retrieving http://localhost:9000 
+Begin by downloading the code, invoking "activator run" in your shell, then retrieving http://localhost:9000
 to display the single form illustrated at the top of this page. The form displays the fields
 associated with a "Student":  Name, Password, Hobbies, Level, GPA, and Majors.  Some of these
 are required, some are optional. Try filling out the form in both valid and invalid ways and
@@ -53,24 +53,20 @@ created from the form values.
 
 **Run the tests.**
 
-Next, type "control-D" in your shell to bring down the development server, and then "play test" 
+Next, type "control-D" in your shell to bring down the development server, and then "activator test"
 to invoke the test cases. You should get output similar to the following:
 
-    [~/play-example-form]-> play test
-    [info] Loading project definition from /Users/johnson/projecthosting/github/play-example-form/project
-    [info] Set current project to play-example-form (in build file:/Users/johnson/projecthosting/github/play-example-form/)
-    [info] tests.ViewTest
-    [info] + tests.ViewTest.testIndexPageRetrieval
-    [info] + tests.ViewTest.testIndexPageEmptySubmission
-    [info] + tests.ViewTest.testIndexPageValidSubmission
-    [info] + tests.ViewTest.testIndexPageFormFilledSubmission
-    [info] 
-    [info] 
-    [info] Total for test tests.ViewTest
-    [info] Finished in 0.015 seconds
-    [info] 4 tests, 0 failures, 0 errors
-    [info] Passed: : Total 4, Failed 0, Errors 0, Passed 4, Skipped 0
-    [success] Total time: 8 s, completed Aug 16, 2013 10:05:33 AM
+    [~/projecthosting/github/play/play-example-form]-> activator test
+    [info] Loading project definition from /Users/johnson/projecthosting/github/play/play-example-form/project
+    [info] Updating {file:/Users/johnson/projecthosting/github/play/play-example-form/project/}play-example-form-build...
+    [info] Resolving org.fusesource.jansi#jansi;1.4 ...
+    [info] Done updating.
+    [info] Set current project to play-example-form (in build file:/Users/johnson/projecthosting/github/play/play-example-form/)
+    [info] Updating {file:/Users/johnson/projecthosting/github/play/play-example-form/}root...
+    [info] Resolving com.typesafe.trace#trace-sigar-libs;0.1.7 ...
+    [info] Done updating.
+    [info] Passed: Total 4, Failed 0, Errors 0, Passed 4
+    [success] Total time: 13 s, completed Mar 3, 2015 3:57:17 PM
 
 We'll come back to this later, but this step verifies that tests run correctly in your environment.
 
