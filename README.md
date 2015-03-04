@@ -5,12 +5,16 @@ Overview
 
 This application provides an example of form processing with the following features:
 
-  * Play Version 2.2
-  * [WebJars](http://www.webjars.org/) to download dependencies.
-  * [Twitter Bootstrap 3.0.0](http://getbootstrap.com/).
+  * [Play Version 2.3.7](https://www.playframework.com/)
+
+  * [Twitter Bootstrap 3.3.2](http://getbootstrap.com/).
+
   * Individual Twitter Bootstrap [helper templates](https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/bootstrap3) for each form control.
+
   * Separation of [form backing classes](https://github.com/ics-software-engineering/play-example-form/tree/master/app/views/formdata) from [model classes](https://github.com/ics-software-engineering/play-example-form/tree/master/app/models).
+
   * Validation done with [validate()](https://github.com/ics-software-engineering/play-example-form/blob/master/app/views/formdata/StudentFormData.java#L57-123), not annotations.
+
   * Testing with [Fluentlenium](https://github.com/FluentLenium/FluentLenium).
     
 The design of this example differs in two significant ways from the traditional Play form processing examples. 
@@ -24,7 +28,7 @@ The design of this example differs in two significant ways from the traditional 
      classes for database schemas. Since Play requires the backing classes for forms to have public fields,
      this separation means that model classes can have private fields, avoiding [well documented problems](http://www.manning-sandbox.com/thread.jspa?messageID=143570&#143570). 
 
-  2. **Explicit field constructors for Twitter Bootstrap 3.x.**  The canonical recommendation by Play developers for users of 
+  2. **Explicit field constructors for Twitter Bootstrap 3**  The canonical recommendation by Play developers for users of
      Twitter Bootstrap is to create a single "implicit" field constructor.  The problem with this recommendation
      is that a single implicit field constructor cannot satisfy all of Twitter Bootstrap's layout
      requirements for form controls (for example, multiple checkboxes). This example illustrates
@@ -138,12 +142,6 @@ submitting an empty form generates a validation error, one that submits a form f
 from a valid Student ID, and a final one that fills out a valid form manually by using the 
 IndexPage methods. 
 
-Getting tests to work exposes an unfortunate library versioning issue: [HTMLUnit](http://htmlunit.sourceforge.net/) requires 
-a version of JQuery no later than 1.8.3, while recent versions of Twitter Bootstrap 
-have a Maven dependency of JQuery 1.9.0.  [Build.scala](https://github.com/ics-software-engineering/play-example-form/blob/master/project/Build.scala#L17-19)
-illustrates how to load a newer version of Bootstrap with an older, HTMLUnit-compliant version of JQuery.
-Another solution is to use [PhantomJS](http://phantomjs.org/) rather than HTMLUnit; then you can
-use current versions of JQuery. [This fork](https://github.com/buster84/play-example-form) shows how to use PhantomJS.
         
 Issues
 ------
