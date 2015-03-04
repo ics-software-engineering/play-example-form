@@ -9,7 +9,7 @@ import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.formdata.StudentFormData;
-import views.html.index;
+import views.html.Index;
 
 /**
  * The controller for the single page of this application.
@@ -27,7 +27,7 @@ public class Application extends Controller {
   public static Result getIndex(long id) {
     StudentFormData studentData = (id == 0) ? new StudentFormData() : models.Student.makeStudentFormData(id);
     Form<StudentFormData> formData = Form.form(StudentFormData.class).fill(studentData);
-    return ok(index.render(
+    return ok(Index.render(
       formData,
       Hobby.makeHobbyMap(studentData),
       GradeLevel.getNameList(),
@@ -52,7 +52,7 @@ public class Application extends Controller {
     if (formData.hasErrors()) {
       // Don't call formData.get() when there are errors, pass 'null' to helpers instead. 
       flash("error", "Please correct errors above.");
-      return badRequest(index.render(formData,
+      return badRequest(Index.render(formData,
         Hobby.makeHobbyMap(null), 
         GradeLevel.getNameList(),
         GradePointAverage.makeGPAMap(null), 
@@ -63,7 +63,7 @@ public class Application extends Controller {
       // Convert the formData into a Student model instance.
       Student student = Student.makeInstance(formData.get());
       flash("success", "Student instance created/edited: " + student);
-      return ok(index.render(formData,
+      return ok(Index.render(formData,
         Hobby.makeHobbyMap(formData.get()),
         GradeLevel.getNameList(),
         GradePointAverage.makeGPAMap(formData.get()),
