@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/jars/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
