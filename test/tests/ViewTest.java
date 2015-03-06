@@ -20,6 +20,7 @@ public class ViewTest {
     running(testServer(testPort, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
       @Override
       public void invoke(TestBrowser browser) {
+        browser.maximizeWindow();
         IndexPage indexPage = new IndexPage(browser.getDriver(), testPort, 0);
         browser.goTo(indexPage);
         indexPage.isAt();
@@ -33,6 +34,7 @@ public class ViewTest {
     running(testServer(testPort, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
       @Override
       public void invoke(TestBrowser browser) {
+        browser.maximizeWindow();
         IndexPage indexPage = new IndexPage(browser.getDriver(), testPort, 0);
         browser.goTo(indexPage);
         indexPage.isAt();
@@ -48,6 +50,7 @@ public class ViewTest {
     running(testServer(testPort, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
       @Override
       public void invoke(TestBrowser browser) {
+        browser.maximizeWindow();
         IndexPage indexPage = new IndexPage(browser.getDriver(), testPort, 1);
         browser.goTo(indexPage);
         indexPage.isAt();
@@ -63,6 +66,7 @@ public class ViewTest {
     running(testServer(testPort, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
       @Override
       public void invoke(TestBrowser browser) {
+        browser.maximizeWindow();
         IndexPage indexPage = new IndexPage(browser.getDriver(), testPort, 0);
         browser.goTo(indexPage);
         indexPage.isAt();
