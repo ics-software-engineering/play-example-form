@@ -14,6 +14,6 @@
         }
       </select>
       <span class="help-block">@help</span>
-      <span class="help-block">@{field.error.map { error => error.message }}</span>
+      <span class="help-block">@{field.error.map { error => Messages(error.message) }}</span>
     </div>
   </div>
